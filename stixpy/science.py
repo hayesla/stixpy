@@ -149,7 +149,7 @@ class SpectrogramPlotMixin:
         t_edges = Time(np.concatenate(
             [times - timedeltas.reshape(-1) / 2, times[-1] + timedeltas.reshape(-1)[-1:] / 2]))
 
-        im = axes.pcolormesh(t_edges.datetime, e_edges[1:-1], counts[:, 0, 0, 1:-1].T.value,
+        im = axes.pcolormesh(t_edges.datetime, e_edges[1:-1].value, counts[:, 0, 0, 1:-1].T.value,
                shading='flat', norm=LogNorm())
 
         #axes.colorbar(im).set_label(format(counts.unit))
